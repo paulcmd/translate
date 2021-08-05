@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import UserCreate from './UserCreate'
 
 const App = () => {
     const [language, setLanguage] = useState('')
@@ -20,7 +21,7 @@ const App = () => {
                     onClick={() => onLanguageChange('Dutch')}
                 />
             </div>
-            {`Current Language : ${language}`}
+            <UserCreate />
         </div>
     )
 }
