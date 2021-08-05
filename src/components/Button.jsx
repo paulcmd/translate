@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = () => {
 	return (
-		<button className="ui primary">Submit</button>
+		<button className="ui button primary">Submit</button>
 	)
 }
 
