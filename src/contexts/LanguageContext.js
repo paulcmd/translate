@@ -1,11 +1,3 @@
 import React from 'react'
 
-const LanguageContext = () => {
-	return (
-		<div>
-			
-		</div>
-	)
-}
-
-export default LanguageContext
+export default React.createContext('english')
