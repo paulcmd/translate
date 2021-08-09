@@ -24,4 +24,6 @@ its the same as saying Button.contextType = LanguageContext
 -you only need to assign static if you're going to use this.context property and not
   Consumer
 
+- Consumer can consumer more than 1 object. this.context, just 1
+
 */

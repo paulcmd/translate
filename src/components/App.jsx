@@ -31,3 +31,7 @@ const App = () => {
 }
 
 export default App
+
+/* 
+value in the Provider is a defined word, not made up
+*/
