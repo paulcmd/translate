@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LanguageContext from '../contexts/LanguageContext'
+import ColorContext from '../contexts/ColorContext'
 
 import UserCreate from './UserCreate'
 
@@ -23,9 +24,11 @@ const App = () => {
                     onClick={() => onLanguageChange('Dutch')}
                 />
             </div>
-            <LanguageContext.Provider value={language}>
-                <UserCreate />
-            </LanguageContext.Provider>
+            <ColorContext.Provider value='red'>
+                <LanguageContext.Provider value={language}>
+                    <UserCreate />
+                </LanguageContext.Provider>
+            </ColorContext.Provider>
         </div>
     )
 }
