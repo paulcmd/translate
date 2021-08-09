@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import LanguageContext from '../contexts/LanguageContext'
+
 import UserCreate from './UserCreate'
 
 const App = () => {
@@ -6,7 +8,7 @@ const App = () => {
 
     const onLanguageChange = (language) => {
         setLanguage(language)
-        console.log('current language', language)
+        //console.log('current language', language)
     }
     return (
         <div className="ui container">
@@ -21,7 +23,9 @@ const App = () => {
                     onClick={() => onLanguageChange('Dutch')}
                 />
             </div>
-            <UserCreate />
+            <LanguageContext.Provider value={language}>
+                <UserCreate />
+            </LanguageContext.Provider>
         </div>
     )
 }

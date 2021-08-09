@@ -2,18 +2,26 @@ import React, { Component } from 'react'
 import LanguageContext from '../contexts/LanguageContext'
 
 class Button extends Component {
-    static contextType = LanguageContext
-	render() {
-		console.log(this.context)
-        return <button className="ui button primary">Submit</button>
+	renderSubmit(value) {
+		return value === 'English' ? 'Submit' : 'Voorleggen'
+		}
+    render() {
+        //console.log(this.context)
+		
+		return <button className="ui button primary">
+			
+			<LanguageContext.Consumer>
+				{(value)=> this.renderSubmit(value)}
+			</LanguageContext.Consumer>
+		</button>
     }
 }
 
 export default Button
 
-
 /* static creates contextType as an instance of this(Button) class
 its the same as saying Button.contextType = LanguageContext
-
+-you only need to assign static if you're going to use this.context property and not
+  Consumer
 
 */
