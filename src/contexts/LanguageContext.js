@@ -17,6 +17,7 @@ export const LanguageStore = ({children}) => {
     )
 }
 
+
 /* 
 we are creating a LanguageStore as a single source of truth. It will store the state value/object, 
 and method for changing that language/state
@@ -28,4 +29,6 @@ value in the Provider is a defined word, not made up
 the return statement is not really rendering anything to the screen.
 Context must be capitalized because anytime we create a component for react to 
 render it must be capitalized
+
+
 */
