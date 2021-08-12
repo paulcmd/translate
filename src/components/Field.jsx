@@ -1,6 +1,9 @@
 import React from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
-const Field = ({language}) => {
+const Field = () => {
+    const { language } = useLanguage()
+
     const nameText = language === 'English' ? 'Name' : 'Naam'
 
     return (
