@@ -1,26 +1,21 @@
 import React, { useState } from 'react'
-import LanguageContext from '../contexts/LanguageContext'
+import { LanguageStore } from '../contexts/LanguageContext'
 import LanguageSelector from './LanguageSelector'
 import ColorContext from '../contexts/ColorContext'
 
 import UserCreate from './UserCreate'
 
 const App = () => {
-    const [language, setLanguage] = useState('')
-
-    const onLanguageChange = (language) => {
-        setLanguage(language)
-        //console.log('current language', language)
         
-    }
+    
     return (
         <div className="ui container">
-            <LanguageSelector onLanguageChange={onLanguageChange}/>
-            <ColorContext.Provider value="red">
-                <LanguageContext.Provider value={language}>
+            <LanguageStore>
+                <LanguageSelector />
+                <ColorContext.Provider value="red">
                     <UserCreate />
-                </LanguageContext.Provider>
-            </ColorContext.Provider>
+                </ColorContext.Provider>
+            </LanguageStore>
         </div>
     )
 }
@@ -28,5 +23,6 @@ const App = () => {
 export default App
 
 /* 
-value in the Provider is a defined word, not made up
+LanguageStore is providing onLanguageChange to LanguageSelectore and the
+the state value(currently selected language) to UserCreate
 */

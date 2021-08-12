@@ -18,11 +18,14 @@ export const LanguageStore = ({children}) => {
 }
 
 /* 
-we are creating a LanguageStore as a single source of truth. It will store the current
-language in state, and method for changing that language
+we are creating a LanguageStore as a single source of truth. It will store the state value/object, 
+and method for changing that language/state
+
+value in the Provider is a defined word, not made up
 
 ...language   we are taking everything in state and placing in a new spread object
 
+the return statement is not really rendering anything to the screen.
 Context must be capitalized because anytime we create a component for react to 
 render it must be capitalized
 */
